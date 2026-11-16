@@ -1,4 +1,5 @@
 
+# Unity generated files
 [Ll]ibrary/
 [Tt]emp/
 [Oo]bj/
@@ -9,13 +10,20 @@
 [Mm]emoryCaptures/
 [Rr]ecordings/
 
+# IDE files
 .vs/
 .vscode/
 .idea/
 
+# Visual Studio generated files
 *.csproj
 *.sln
 *.user
 *.suo
+
+# Operating system files
 .DS_Store
 Thumbs.db
+
+# Vuforia package archive from Lab1
+Lab1/Packages/com.ptc.vuforia.engine-11.4.4.tgz
