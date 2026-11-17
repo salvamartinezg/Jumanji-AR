@@ -14,6 +14,15 @@ Single-player game, developed as a team.
 - [State of the art - Homework 4](Docs/State-of-the-art.pdf)
 - [Main Modules - Homework 5](Docs/Main_Modules_Jumanji_XR.pdf)
 
+## Development Progress
+
+| Week | Progress |
+|------|----------|
+| Week 1 · 19–25 October 2026 | **Lab 02 completed:** Unity VR project built with the XR Interaction Toolkit (`Labs/Lab02/VRLab02`) and its demo video (`Labs/Lab02/Video`). |
+| Week 2 · 26 October–1 November 2026 | **State of the art – Homework 4 completed** ([PDF](Docs/State-of-the-art.pdf)). Lab 01 (Vuforia AR project) and Lab 03 (hand model made in Blender and imported into a Unity XR project) added to the repository. |
+| Week 3 · 2–8 November 2026 | **Initial prototyping completed.** |
+| Week 4 · 9–15 November 2026 | **Graybox completed:** attic room built with ProBuilder (floor, side walls, sloped roof, wooden beams and a window with glass), table  and chair at real scale, board placed on the table, primitive stand-ins for the temple, chest, crystal and spike trap, and attic props (shelf, trunk, boxes, rug and hanging lamp). The die and the token can be grabbed (XR Grab Interactable). Seated player with locomotion disabled, project set up for Meta Quest 2 (Android, OpenXR, hand tracking) and tested in the editor with the XR Interaction Simulator. Scale testing on the Quest 2 is still pending. |
+
 ## Tech stack
 
 | Tool | Use |
@@ -46,8 +55,6 @@ Flow: Launch Game → Main Menu → Enter Game → Roll Die → Move Token → B
 
 - Player in a fixed position, no locomotion.
 - Flat shading, flat colors and a limited palette.
-- Baked lighting, warm window and lamp light, dust in the air and emissive crystals.
-
 
 ## References
 

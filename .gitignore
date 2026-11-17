@@ -18,6 +18,7 @@
 # Visual Studio generated files
 *.csproj
 *.sln
+*.slnx
 *.user
 *.suo
 
@@ -25,5 +26,13 @@
 .DS_Store
 Thumbs.db
 
-# Vuforia package archive from Lab1
-Lab1/Packages/com.ptc.vuforia.engine-11.4.4.tgz
+# Vuforia package archive from Lab01
+Labs/Lab01/Packages/com.ptc.vuforia.engine-11.4.4.tgz
+
+# Visual Studio upgrade leftovers
+/Backup/
+UpgradeLog*.htm
+
+# Unity crash-recovery scenes
+/Assets/_Recovery/
+/Assets/_Recovery.meta

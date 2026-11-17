@@ -1,4 +1,3 @@
-
 using System.Collections;
 using UnityEngine;
 
@@ -8,10 +7,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private BoardPathManager boardPath;
 
     [Header("Movement Settings")]
+    [Tooltip("Speed in board units per second (scaled with the board).")]
     [SerializeField] private float moveSpeed = 3f;
 
     private int currentTileIndex = 0;
     private bool isMoving = false;
+    private Renderer tokenRenderer;
 
     // Allows TurnManager to check if the player is moving
     public bool IsMoving
@@ -21,8 +22,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        Transform firstTile = boardPath.GetTile(0);
-        transform.position = firstTile.position + Vector3.up * 0.25f;
+        tokenRenderer = GetComponent<Renderer>();
+        transform.position = GetStandPosition(boardPath.GetTile(0));
     }
 
     public void MoveSteps(int steps)
@@ -31,6 +32,27 @@ public class PlayerMovement : MonoBehaviour
             return;
 
         StartCoroutine(MoveAlongPath(steps));
+    }
+
+    // Point where the token rests on top of a tile.
+    // Uses the real sizes of tile and token, so it works at any board scale.
+    private Vector3 GetStandPosition(Transform tile)
+    {
+        Renderer tileRenderer = tile.GetComponent<Renderer>();
+
+        float tileTop = tileRenderer != null
+            ? tileRenderer.bounds.max.y
+            : tile.position.y;
+
+        float tokenHalfHeight = tokenRenderer != null
+            ? tokenRenderer.bounds.extents.y
+            : 0f;
+
+        return new Vector3(
+            tile.position.x,
+            tileTop + tokenHalfHeight,
+            tile.position.z
+        );
     }
 
     private IEnumerator MoveAlongPath(int steps)
@@ -42,26 +64,26 @@ public class PlayerMovement : MonoBehaviour
             boardPath.TotalTiles - 1
         );
 
+        // The board is scaled down to sit on the table, so the speed scales with it.
+        float speed = moveSpeed * boardPath.transform.lossyScale.x;
+
         while (currentTileIndex < targetIndex)
         {
             currentTileIndex++;
 
             Vector3 targetPosition =
-                boardPath.GetTile(currentTileIndex).position
-                + Vector3.up * 0.25f;
+                GetStandPosition(boardPath.GetTile(currentTileIndex));
 
-            while (Vector3.Distance(transform.position, targetPosition) > 0.01f)
+            while (transform.position != targetPosition)
             {
                 transform.position = Vector3.MoveTowards(
                     transform.position,
                     targetPosition,
-                    moveSpeed * Time.deltaTime
+                    speed * Time.deltaTime
                 );
 
                 yield return null;
             }
-
-            transform.position = targetPosition;
         }
 
         isMoving = false;
