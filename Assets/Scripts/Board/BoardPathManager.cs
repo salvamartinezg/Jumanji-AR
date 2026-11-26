@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 public class BoardPathManager : MonoBehaviour
@@ -19,6 +18,15 @@ public class BoardPathManager : MonoBehaviour
         return pathTiles[index];
     }
 
+    public TileType GetTileType(int index)
+    {
+        Transform tile = GetTile(index);
+        if (tile == null)
+            return TileType.Normal;
+
+        TileData data = tile.GetComponent<TileData>();
+        return data != null ? data.Type : TileType.Normal;
+    }
 
     private void Start()
     {
@@ -26,8 +34,7 @@ public class BoardPathManager : MonoBehaviour
 
         for (int i = 0; i < TotalTiles; i++)
         {
-            Debug.Log("Tile " + (i + 1) + ": " + GetTile(i).name);
+            Debug.Log("Tile " + (i + 1) + ": " + GetTile(i).name + " -> " + GetTileType(i));
         }
     }
-
 }
