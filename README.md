@@ -18,7 +18,7 @@ All the videos requested for grading, in one place.
 | Homework 1 | Lab 01 – Vuforia AR project ([`Labs/Lab01`](Labs/Lab01)) | [Watch video](Lab1/Video/Lab1%20-%20SampleScene%20-%20Windows%2C%20Mac%2C%20Linux%20-%20Unity%206.6%20%286000.6.4f1%29%20_DX11_%202026-11-26%2018-16-30.mp4) |
 | Homework 2 | Lab 02 – VR project with the XR Interaction Toolkit ([`Labs/Lab02`](Labs/Lab02)) | [Watch video](Labs/Lab02/Video/DemoVRLab2.mp4) |
 | Homework 3 | Lab 03 – Hand model made in Blender and imported into a Unity XR project ([`Labs/Lab03`](Labs/Lab03)) | [Watch video](Labs/Lab03/Video/_%20Hand_Final%20%5BC__Users_Javi_Desktop_IntroductionMixedReality-2026_Labs_Lab03_Blender_Hand_Final.blend%5D%20-%20Blender%205.2.2%20LTS%202026-11-26%2018-36-09.mp4) |
-| Project progress – this week | Whole game loop: menu, die throw, token placement, tile events and victory screen | [Watch video](Video/Week9_Game_Loop.mp4) |
+| Project progress – this week | Whole game loop: menu, die throw, token placement, tile events and victory screen | [Watch video](VideosJumanji/Jumanji_Demo_Week9.mp4) |
 
 ## Documentation
 
